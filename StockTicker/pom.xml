@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fish.payara.examples.payaramicro</groupId>
-    <artifactId>StockTicker</artifactId>
+    <artifactId>HumiditySensor</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
-    <name>StockTicker</name>
+    <name>HumiditySensor</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -16,9 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>fish.payara.extras</groupId>
-            <artifactId>payara-micro</artifactId>
-            <version>4.1.1.161.1</version>
+            <groupId>fish.payara.api</groupId>
+            <artifactId>payara-api</artifactId>
+            <version>4.1.1.171.1</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
@@ -26,6 +26,12 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>jdk.dio</groupId>
+            <artifactId>dio</artifactId>
+            <version>0.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
