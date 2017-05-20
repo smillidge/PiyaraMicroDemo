@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Payara Micro Stock Ticker</title>
+		<title>Payara Micro Humidity Measurements</title>
 
+                <link rel="stylesheet" href="css/ws-demo.css"/>
 		<script type="text/javascript" src="jquery-1.8.1.js"></script>
 		<script type="text/javascript">
 $(document).ready(function() {
@@ -26,15 +27,16 @@ $(document).ready(function() {
                         }
 		},
 		title: {
-			text: 'Payara Stock Price'
+			text: 'Payara Micro Humidity Measurements'
 		},
 		xAxis: {
 			type: 'datetime',
 			tickPixelInterval: 150
 		},
 		yAxis: {
+                        min: 10,
 			title: {
-				text: 'Price ($)'
+				text: 'Humidity (%)'
 			},
 			plotLines: [{
 				value: 0,
@@ -56,7 +58,7 @@ $(document).ready(function() {
 			enabled: false
 		},
 		series: [{
-			name: 'PAYARA',
+			name: 'Humidity',
 			data: (function() {
 				// generate an array of random data
 				var data = [],
@@ -82,6 +84,9 @@ $(document).ready(function() {
 	<body>
 <script type="text/javascript" src="js/highcharts.js"></script>
 <script type="text/javascript" src="js/modules/exporting.js"></script>
+<img src="images/payara-logo-blue.png" alt="Payara Logo" height="20%" width="20%"/>
+<div>This demo shows a real time updating graph using data received over the Payara Clustered CDI Event Bus and pushed to the browser using WebSockets.</div>
+
 
 <div id="container" style="width: 80%; height: 80%; margin: 0 auto"></div>
 
@@ -97,7 +102,7 @@ websocket.onerror = function(event) { onError(event) };
 websocket.onmessage = function(event) { 
    var object = JSON.parse(event.data);
    var x = (new Date()).getTime();
-   var y = object.price;
+   var y = object.value;
     document.chart.series[0].addPoint([x,y],true,true,false);   
   }
 

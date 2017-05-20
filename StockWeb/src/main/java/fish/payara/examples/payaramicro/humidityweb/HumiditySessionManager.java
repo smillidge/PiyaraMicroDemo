@@ -15,10 +15,9 @@
  When distributing the software, include this License Header Notice in each
  file and include the License file at packager/legal/LICENSE.txt.
  */
-package fish.payara.examples.payaramicro.stockweb;
+package fish.payara.examples.payaramicro.humidityweb;
 
-import fish.payara.examples.payaramicro.stockticker.Stock;
-import fish.payara.micro.cdi.ClusteredCDIEventBus;
+import fish.payara.examples.payaramicro.humidity.HumidityMeasurement;
 import fish.payara.micro.cdi.Inbound;
 import java.io.IOException;
 import java.util.HashSet;
@@ -27,7 +26,6 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
-import javax.inject.Inject;
 import javax.websocket.Session;
 
 /**
@@ -35,16 +33,12 @@ import javax.websocket.Session;
  * @author steve
  */
 @ApplicationScoped
-public class StockSessionManager {
+public class HumiditySessionManager {
     
     private HashSet<Session> sessions;
     
-    @Inject
-    private ClusteredCDIEventBus bus;
-    
     @PostConstruct 
     public void postConstruct() {
-       bus.initialize();
        sessions = new HashSet<>();
     }
     
@@ -56,14 +50,14 @@ public class StockSessionManager {
         sessions.remove(session);
     }
     
-    public void observer(@Observes @Inbound Stock stock) {
+    public void observer(@Observes @Inbound HumidityMeasurement stock) {
         try {
             for (Session session : sessions) {
                  System.out.println("Recieved " + stock.toString() + " writing to " + session.getId());
                 session.getBasicRemote().sendText(stock.toString());                
             }
         } catch (IOException ex) {
-            Logger.getLogger(StockPush.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(HumidityPush.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

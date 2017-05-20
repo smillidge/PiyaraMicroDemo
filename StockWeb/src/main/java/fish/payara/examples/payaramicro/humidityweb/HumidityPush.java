@@ -15,7 +15,7 @@
  When distributing the software, include this License Header Notice in each
  file and include the License file at packager/legal/LICENSE.txt.
  */
-package fish.payara.examples.payaramicro.stockweb;
+package fish.payara.examples.payaramicro.humidityweb;
 
 import javax.inject.Inject;
 import javax.websocket.OnClose;
@@ -30,12 +30,12 @@ import javax.websocket.server.ServerEndpoint;
  * @author steve
  */
 @ServerEndpoint("/graph")
-public class StockPush {
+public class HumidityPush {
 
     private static final long serialVersionUID = 1L;
     
     @Inject
-    StockSessionManager sessionManager;
+    HumiditySessionManager sessionManager;
     
     private Session mySession;
 

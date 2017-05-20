@@ -15,7 +15,7 @@
  When distributing the software, include this License Header Notice in each
  file and include the License file at packager/legal/LICENSE.txt.
  */
-package fish.payara.examples.payaramicro.stockticker;
+package fish.payara.examples.payaramicro.humidity;
 
 import java.io.Serializable;
 
@@ -23,50 +23,31 @@ import java.io.Serializable;
  *
  * @author steve
  */
-public class Stock implements Serializable {
+public class HumidityMeasurement implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private String symbol;
-    private String description;
-    private double price;
+    private float value;
 
-    public Stock(String symbol, String description, double price) {
-        this.symbol = symbol;
-        this.description = description;
-        this.price = price;
+    public HumidityMeasurement(float value) {
+        this.value = value;
     }
     
-    public Stock() {
+    public HumidityMeasurement() {
         
     }
 
-    public String getSymbol() {
-        return symbol;
+    public float getValue() {
+        return value;
     }
 
-    public void setSymbol(String symbol) {
-        this.symbol = symbol;
+    public void setValue(float value) {
+        this.value = value;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     @Override
     public String toString() {
-        return "{" + "\"symbol\" :\"" + symbol + "\", \"description\" :\"" + description + "\", \"price\": " + price + '}';
+        return "{\"value\":" + value + '}';
     }
     
     
