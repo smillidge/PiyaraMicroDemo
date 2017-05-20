@@ -63,7 +63,7 @@ public class BannerBean {
     public void doBanner() {
         buff.clearFrameBuffer();
         buff.setRotation(270);
-        buff.showMessage("Payara Micro Demo", Colors.PAYARA_ORANGE, Colors.PAYARA_BLUE, 70);
+        buff.showMessage("Payara Micro: Blow on the Sensor...", Colors.PAYARA_ORANGE, Colors.PAYARA_BLUE, 70);
         buff.setRotation(180);
         buff.showPayara();     
     }
