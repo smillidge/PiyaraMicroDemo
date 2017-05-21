@@ -1,0 +1,15 @@
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/ledmatrix/Colors.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/sensors/LSM9DS1.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/examples/payaramicro/humidity/BannerBean.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/SenseHat.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/ledmatrix/Alphabet.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/impl/SenseHatImpl.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/sensors/KuraI2CDevice.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/joystick/Joystick.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/ledmatrix/Test.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/sensors/HTS221.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/examples/payaramicro/humidity/HumidityTicker.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/examples/payaramicro/humidity/HumidityMeasurement.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/sensors/LPS25H.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/joystick/JoystickEvent.java
+/opt/PayaraDev/PiyaraMicroDemo/HumiditySensor/src/main/java/fish/payara/piyara/sensehat/ledmatrix/FrameBuffer.java
