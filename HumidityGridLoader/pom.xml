@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>payaramicro</artifactId>
+        <groupId>fish.payara.examples</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <groupId>fish.payara.examples.payaramicro</groupId>
-    <artifactId>HumiditySensor</artifactId>
+    <groupId>fish.payara.examples.payaramicro.humidity.grid.loader</groupId>
+    <artifactId>HumidityGridLoader</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
-    <name>HumiditySensor</name>
+    <name>HumidityGridLoader</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -16,16 +21,23 @@
 
     <dependencies>
         <dependency>
-            <groupId>fish.payara.api</groupId>
-            <artifactId>payara-api</artifactId>
-            <version>4.1.1.171.1</version>
+            <groupId>fish.payara.cloud.connectors</groupId>
+            <artifactId>AzureSBJCAAPI</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>fish.payara.micro</groupId>
-            <artifactId>payara-micro</artifactId>
-            <version>4.1.2.172-SNAPSHOT</version>
+            <groupId>fish.payara.api</groupId>
+            <artifactId>payara-api</artifactId>
+            <version>4.1.1.171</version>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.0.0</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
@@ -33,12 +45,7 @@
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>jdk.dio</groupId>
-            <artifactId>dio</artifactId>
-            <version>0.1.0</version>
+            <type>jar</type>
             <scope>provided</scope>
         </dependency>
     </dependencies>

@@ -18,6 +18,7 @@
 package fish.payara.examples.payaramicro.humidity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  *
@@ -68,7 +69,7 @@ public class HumidityMeasurement implements Serializable {
 
     @Override
     public String toString() {
-        return "{\"value\":" + value + ",\"date\":" + date + ",sensorName\":\"" + sensorName +"\"}";
+        return "{\"value\":" + value + ",\"date\":" + date + ",\"sensorName\":\"" + sensorName +"\"}";
     }
     
     

@@ -4,6 +4,7 @@
  */
 package fish.payara.examples.payaramicro.humidity;
 
+import fish.payara.micro.PayaraInstance;
 import fish.payara.micro.cdi.Outbound;
 import fish.payara.piyara.sensehat.impl.SenseHatImpl;
 import fish.payara.piyara.sensehat.sensors.HTS221;
@@ -32,6 +33,9 @@ public class HumidityTicker {
     @Outbound(loopBack = true)
     Event<HumidityMeasurement> humidityEvents;
     
+    @Inject
+    PayaraInstance instance;
+    
     private HTS221 sensor;
     
     @PostConstruct
@@ -45,6 +49,7 @@ public class HumidityTicker {
     public void measureHumidity() {
 
         HumidityMeasurement humidity = new HumidityMeasurement(sensor.getHumidity());
+        humidity.setSensorName(instance.getInstanceName());
         System.out.println(humidity);
         humidityEvents.fire(humidity);
         

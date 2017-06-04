@@ -27,6 +27,9 @@ public class HumidityMeasurement implements Serializable {
 
     private static final long serialVersionUID = 1L;
     private float value;
+    private long date;
+    private String sensorName;
+    
 
     public HumidityMeasurement(float value) {
         this.value = value;
@@ -44,10 +47,28 @@ public class HumidityMeasurement implements Serializable {
         this.value = value;
     }
 
+    public long getDate() {
+        return date;
+    }
+
+    public void setDate(long date) {
+        this.date = date;
+    }
+
+    public String getSensorName() {
+        return sensorName;
+    }
+
+    public void setSensorName(String sensorName) {
+        this.sensorName = sensorName;
+    }
+    
+    
+
 
     @Override
     public String toString() {
-        return "{\"value\":" + value + '}';
+        return "{\"value\":" + value + ",\"date\":" + date + ",\"sensorName\":\"" + sensorName +"\"}";
     }
     
     

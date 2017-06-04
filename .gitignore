@@ -13,3 +13,5 @@ hs_err_pid*
 /HumidityWeb/target/
 /HumiditySensor/target/
 /HumidityAzureSBConnector/target/
+/HistoricalHumidityData/target/
+/HumidityGridLoader/target/
